@@ -1,0 +1,163 @@
+@CHARSET "ISO-8859-1";
+
+.jcarousel-wrapper {
+    position: relative;
+}
+.jcarousel {
+    background-color: #f8f8f8;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 2px #999;
+    height: 350px;
+    margin: 30px 50px;
+    overflow: hidden;
+}
+.jcarousel ul {
+    list-style: outside none none;
+    position: relative;
+    width: 20000em;
+}
+.jcarousel li {
+    float: left;
+}
+.jcarousel #home-img {
+    height: 230px;
+    margin-top: 10px;
+    padding-left: 2%;
+    position: relative;
+    width: 250px;
+}
+.jcarousel img {
+    height: 230px;
+    position: absolute;
+    width: 100%;
+}
+.jcarousel h2 {
+    font-family: "Times New Roman",Times,serif;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+}
+.jcarousel h5 {
+    font-family: "Times New Roman",Times,serif;
+    font-size: 12px;
+    font-weight: bolder;
+    text-align: center;
+}
+.jcarousel .member-social {
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 15px;
+    height: 230px;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    transform: scale(0.5);
+    transition: all 0.3s ease-out 0s;
+    width: 100%;
+}
+.jcarousel #home-img:hover .member-social {
+    opacity: 1;
+    transform: scale(1);
+}
+.jcarousel .member-social a {
+    color: #fff;
+    font-size: 16px;
+    position: relative;
+    top: 47%;
+}
+#home-img:hover .member-social a {
+    margin: 6px;
+}
+#home-img:hover .member-social a:hover {
+    color: red;
+}
+.jcarousel-control-prev, .jcarousel-control-next {
+    background: #f2f2f2 none repeat scroll 0 0;
+    border-radius: 30px;
+    box-shadow: 0 0 4px #f0efe7;
+    color: #fff;
+    font: 24px/27px Arial,sans-serif;
+    height: 30px;
+    margin-top: -15px;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 0 1px #000;
+    top: 60%;
+    width: 30px;
+}
+.jcarousel-control-prev {
+    left: 15px;
+}
+.jcarousel-control-next {
+    right: 15px;
+}
+.jcarousel-control-prev:hover {
+    color: yellow;
+}
+.jcarousel-control-next:hover {
+    color: yellow;
+}
+@media only screen and (min-width: 601px) and (max-width: 1100px) {
+.jcarousel {
+    height: 300px;
+}
+.jcarousel #home-img {
+    height: 190px;
+    padding-left: 2%;
+    width: 220px;
+}
+.jcarousel img {
+    height: 190px;
+    width: 100%;
+}
+.jcarousel .member-social {
+    height: 190px;
+    width: 100%;
+}
+#home-img:hover .member-social a {
+    margin: 4px;
+}
+.jcarousel h2 {
+    font-size: 15px;
+    font-weight: bold;
+}
+.jcarousel h5 {
+    font-size: 10px;
+}
+.jcarousel-control-prev, .jcarousel-control-next {
+    top: 50%;
+}
+}
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+.jcarousel {
+    height: 350px;
+}
+.jcarousel #home-img {
+    height: 200px;
+    padding-left: 1%;
+    width: 250px;
+}
+.jcarousel img {
+    height: 220px;
+    width: 100%;
+}
+.jcarousel .member-social {
+    height: 220px;
+    width: 100%;
+}
+#home-img:hover .member-social a {
+    font-size: 10px;
+    margin: 3px;
+}
+.jcarousel h2 {
+    font-size: 15px;
+    font-weight: bold;
+}
+.jcarousel h5 {
+    font-size: 9px;
+}
+.jcarousel-control-prev, .jcarousel-control-next {
+    top: 50%;
+}
+}
