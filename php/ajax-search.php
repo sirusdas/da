@@ -71,6 +71,7 @@ for($i=0;$i<10;$i++){
 	$r[$i] = mysqli_query($conn,$sql[$i]);
 }
 //now lets display this
+$flag = false;
 for($i=0;$i<10;$i++){
 	if (mysqli_num_rows($r[$i]) > 0) {
 		// output data of each row
@@ -81,7 +82,7 @@ for($i=0;$i<10;$i++){
 				$data .="	<div class='col-md-8'>
 									  	<h6>".$row['comp_desc']."</h6>
 									</div>
-									<div class='col-md-2' name='cal'><h5>".$row['price']."</h5></div>
+									<div class='col-md-2' name='cal'><h5>₹ ".$row['price']."</h5></div>
 								    <div class='col-md-2'><input type='checkbox' onclick='handleClick(this);' value='".$row['price']."' ></div>
 			                </div>						
 						</div>											
@@ -90,10 +91,14 @@ for($i=0;$i<10;$i++){
 			}
 			echo $data;
 		} else {
-			echo "0 results";
+			//echo "0 results";
+			$flag = true;
 		}
 }
-
+if($flag == true){
+ echo "Sorry Folks we got nothing";	
+}
+else{
 $data="
 								<div class='input-group row-static'>
 								      <div class='input-group-addon'>₹</div>
@@ -102,5 +107,5 @@ $data="
 								    </div>
 					";
 echo $data;
-
+}
 $conn->close();

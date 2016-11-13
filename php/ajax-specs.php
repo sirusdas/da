@@ -6,7 +6,7 @@ $sql = array();
 function cleanData($a) {
 
 	$b = str_replace( ',', '', $a );
-	
+
 	if( is_numeric( $b ) ) {
 		$a = $b;
 	}
@@ -31,7 +31,7 @@ function getAll($name){
 	while($_POST[$name . $i]!=""){
 		$x[$i]= @trim(stripslashes($_POST[$name . $i ]));
 		//echo "Mr X ...........   " . $x[$i];
-		$i++;	  
+		$i++;
 	}
 	return $x;
 }
@@ -99,13 +99,13 @@ if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 }
 
-$u = 0;$sql=null;
+$u = 0;$sql=null;$flag = false;
 while($p_c[$u]!="" && $p_p[$u]!="" && $tags!=""){
 	$sql[$u] = "INSERT INTO `Processor` (`id`, `brand`, `version`, `cores`, `threads`, `socket_type`, `cache`, `speed`, `comp_desc`, `gen`, `price`, `warranty`, `tags`) VALUES (NULL, '', '', '', '', '', '', '', '".$p_c[$u] . "', '', '".$p_p[$u] . "' , '', '".$tags . "');";
 	if ($conn->query($sql[$u]) === TRUE) {
-		echo "New record created successfully";
+		//echo "New record created successfully";
 	} else {
-		echo "Error: " . $sql[$u] . "<br>" . $conn->error;
+		$flag = true;
 	}
 	$u++;
 }
@@ -113,9 +113,9 @@ $u=0;$sql=null;
 while($cab_c[$u]!="" && $cab_p[$u]!="" && $tags!=""){
 	$sql[$u] = "INSERT INTO `cabinet` (`id`, `brand`, `version`, `type`, `comp_desc`, `size`, `price`, `warranty`, `tags`) VALUES (NULL, '', '', '', '".$cab_c[$u] . "', '', '".$cab_p[$u] . "', '', '".$tags . "');";
 	if ($conn->query($sql[$u]) === TRUE) {
-		echo "New record created successfully";
+		//echo "New record created successfully";
 	} else {
-		echo "Error: " . $sql[$u] . "<br>" . $conn->error;
+		$flag = true;
 	}
 	$u++;
 }
@@ -123,9 +123,9 @@ $u=0;$sql=null;
 while($gc_c[$u]!="" && $gc_p[$u]!="" && $tags!=""){
 	$sql[$u] = "INSERT INTO `graphic_card` (`id`, `brand`, `version`, `size`, `comp_desc`, `gen`, `price`, `warranty`, `tags`) VALUES (NULL, '', '', '', '".$gc_c[$u] . "', '', '".$gc_p[$u] . "', '', '".$tags. "');";
 	if ($conn->query($sql[$u]) === TRUE) {
-		echo "New record created successfully";
+		//echo "New record created successfully";
 	} else {
-		echo "Error: " . $sql[$u] . "<br>" . $conn->error;
+		$flag = true;
 	}
 	$u++;
 }
@@ -133,9 +133,9 @@ $u=0;$sql=null;
 while($hd_c[$u]!="" && $hd_p[$u]!="" && $tags!=""){
 	$sql[$u] = "INSERT INTO `hard_drive` (`id`, `brand`, `version`, `size`, `comp_desc`, `gen`, `type`, `speed`, `price`, `warranty`, `tags`) VALUES (NULL, '', '', '', '".$hd_c[$u] . "', '', '', '', '".$hd_p[$u] . "', '', '".$tags. "');";
 	if ($conn->query($sql[$u]) === TRUE) {
-		echo "New record created successfully";
+		//echo "New record created successfully";
 	} else {
-		echo "Error: " . $sql[$u] . "<br>" . $conn->error;
+		$flag = true;
 	}
 	$u++;
 }
@@ -143,9 +143,9 @@ $u=0;$sql=null;
 while($kybrd_c[$u]!="" && $kybrd_p[$u]!="" && $tags!=""){
 	$sql[$u] = "INSERT INTO `keyboard` (`id`, `brand`, `version`, `type`, `size`, `comp_desc`, `price`, `warranty`, `tags`) VALUES (NULL, '', '', '', '', '".$kybrd_c[$u] . "', '".$kybrd_p[$u] . "', '', '".$tags. "');";
 	if ($conn->query($sql[$u]) === TRUE) {
-		echo "New record created successfully";
+		//echo "New record created successfully";
 	} else {
-		echo "Error: " . $sql[$u] . "<br>" . $conn->error;
+		$flag = true;
 	}
 	$u++;
 }
@@ -153,9 +153,9 @@ $u=0;$sql=null;
 while($mon_c[$u]!="" && $mon_p[$u]!="" && $tags!=""){
 	$sql[$u] = "INSERT INTO `monitor` (`id`, `brand`, `version`, `type`, `size`, `comp_desc`, `price`, `warranty`, `tags`) VALUES (NULL, '', '', '', '', '".$mon_c[$u] . "', '".$mon_p[$u] . "', '', '".$tags. "');";
 	if ($conn->query($sql[$u]) === TRUE) {
-		echo "New record created successfully";
+		//echo "New record created successfully";
 	} else {
-		echo "Error: " . $sql[$u] . "<br>" . $conn->error;
+		$flag = true;
 	}
 	$u++;
 }
@@ -163,9 +163,9 @@ $u=0;$sql=null;
 while($mb_c[$u]!="" && $mb_p[$u]!="" && $tags!=""){
 	$sql[$u] = "INSERT INTO `motherboard` (`id`, `brand`, `version`, `gen`, `socket_type`, `max_ram`, `comp_desc`, `price`, `warranty`, `tags`) VALUES (NULL, '', '', '', '', '', '".$mb_c[$u] . "', '".$mb_p[$u] . "', '', '".$tags. "');";
 	if ($conn->query($sql[$u]) === TRUE) {
-		echo "New record created successfully";
+		//echo "New record created successfully";
 	} else {
-		echo "Error: " . $sql[$u] . "<br>" . $conn->error;
+		$flag = true;
 	}
 	$u++;
 }
@@ -173,9 +173,9 @@ $u=0;$sql=null;
 while($mse_c[$u]!="" && $mse_p[$u]!="" && $tags!=""){
 	$sql[$u] = "INSERT INTO `mouse` (`id`, `brand`, `version`, `mouse_type`, `size`, `laser_type`, `comp_desc`, `price`, `warranty`, `tags`) VALUES (NULL, '', '', '', '', '', '".$mse_c[$u] . "', '".$mse_p[$u] . "', '', '".$tags. "');";
 	if ($conn->query($sql[$u]) === TRUE) {
-		echo "New record created successfully";
+		//echo "New record created successfully";
 	} else {
-		echo "Error: " . $sql[$u] . "<br>" . $conn->error;
+		$flag = true;
 	}
 	$u++;
 }
@@ -183,9 +183,9 @@ $u=0;$sql=null;
 while($ps_c[$u]!="" && $ps_p[$u]!="" && $tags!=""){
 	$sql[$u] = "INSERT INTO `power_supply` (`id`, `brand`, `power`, `gen`, `comp_desc`, `price`, `warranty`, `tags`) VALUES (NULL, '', '', '', '".$ps_c[$u] . "', '".$ps_p[$u] . "', '', '".$tags. "');";
 	if ($conn->query($sql[$u]) === TRUE) {
-		echo "New record created successfully";
+		//echo "New record created successfully";
 	} else {
-		echo "Error: " . $sql[$u] . "<br>" . $conn->error;
+		$flag = true;
 	}
 	$u++;
 }
@@ -193,20 +193,26 @@ $u=0;$sql=null;
 while($ram_c[$u]!="" && $ram_p[$u]!="" && $tags!=""){
 	$sql[$u] = "INSERT INTO `ram` (`id`, `version`, `speed`, `size`, `qty`, `comp_desc`, `gen`, `price`, `warranty`, `tags`) VALUES (NULL, '', '', '', '', '".$ram_c[$u] . "', '', '".$ram_p[$u] . "', '', '".$tags. "');";
 	if ($conn->query($sql[$u]) === TRUE) {
-		echo "New record created successfully";
+		//echo "New record created successfully";
 	} else {
-		echo "Error: " . $sql[$u] . "<br>" . $conn->error;
+		$flag = true;
 	}
 	$u++;
 }
 
+if($flag == true){
+	echo "There was some problem inserting. Please contact Sirus";
+}else {
+	echo "Success :D";
+}
+
 /* for($i=0;$i<10;$i++){
-	if ($conn->query($sql[$i]) === TRUE) {
-		echo "New record created successfully";
-	} else {
-		echo "Error: " . $sql[$i] . "<br>" . $conn->error;
-	}
-} */
+ if ($conn->query($sql[$i]) === TRUE) {
+ //echo "New record created successfully";
+ } else {
+ echo "Error: " . $sql[$i] . "<br>" . $conn->error;
+ }
+ } */
 
 $conn->close();
 

@@ -1,7 +1,7 @@
 ﻿    // ----------------------------------------------
     // Add More
     // ----------------------------------------------
-document.getElementById('button_pro').onclick = p_duplicate;
+document.getElementById('button_p').onclick = p_duplicate;
 document.getElementById('button_mb').onclick = mb_duplicate;
 document.getElementById('button_gc').onclick = gc_duplicate;
 document.getElementById('button_ram').onclick = ram_duplicate;

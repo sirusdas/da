@@ -111,7 +111,7 @@
 							</div>
 						</div>							
 				 
-						<button type="button" class="col-sm-12" id="button_pro" onclick="p_duplicate()">Add More</button>
+						<button type="button" class="col-sm-12" id="button_p" onclick="p_duplicate()">Add More</button>
 						<br><br>
 				  		
 					<h4>MotherBoard</h4>
